@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ userfile.filename }}</h1>
+    <p>Username - {{ userfile.user }}</p>
+    <p>Created at - {{ userfile.created_at }}</p>
+    <p>Expiration date - {{ userfile.expiration_date }}</p>
+    <h1>Days left - {{ userfile.countdown }}</h1>
+    <a href="{{ userfile.file }}" download>Download</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  {% for userfile in file_list %}
+    <a href="{% url 'file_storage:detail' slug=userfile.slug %}">{{ userfile.filename }}</a>
+    <h3>{{ userfile.user }}</h3>
+    <h3>{{ userfile.created_at }}</h3>
+    <h3>{{ userfile.expiration_date }}</h3>
+  {% endfor %}
+</div>
+{% endblock %}
